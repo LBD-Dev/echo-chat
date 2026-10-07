@@ -3,6 +3,7 @@ services:
     name: echo-chat-server
     runtime: node
     rootDir: server
+    plan: free
     buildCommand: npm ci && npm run build
     startCommand: npm start
     healthCheckPath: /health
