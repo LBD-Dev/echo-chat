@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: echo-chat-server
+    runtime: node
+    rootDir: server
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false
